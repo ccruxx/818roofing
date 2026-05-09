@@ -1482,3 +1482,189 @@ textarea:focus-visible {
 
 /* Ensure interactive elements have pointer cursor */
 a, button, [tabindex="0"], label[for], select { cursor: pointer; }
+
+/* ══════════════════════════════════════════════════════════
+   NAV ACTIVE STATE
+══════════════════════════════════════════════════════════ */
+.nav__link--active {
+  color: var(--color-primary) !important;
+  font-weight: 700;
+}
+.nav.scrolled .nav__link--active { color: var(--color-primary) !important; }
+
+/* ══════════════════════════════════════════════════════════
+   PHOTO STRIP (3-col)
+══════════════════════════════════════════════════════════ */
+.photo-strip { line-height: 0; }
+
+.photo-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.photo-strip__grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.photo-strip__grid img:hover { transform: scale(1.02); }
+
+@media (max-width: 768px) {
+  .photo-strip__grid { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   PHOTO GRID (2x2)
+══════════════════════════════════════════════════════════ */
+.photo-grid { line-height: 0; padding-block: var(--space-4) 0; }
+
+.photo-grid__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+}
+
+.photo-grid__grid img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .photo-grid__grid { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   PAGE HERO (sub-pages)
+══════════════════════════════════════════════════════════ */
+.page-hero {
+  position: relative;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.page-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(15,23,42,0.92) 0%,
+    rgba(15,23,42,0.72) 55%,
+    rgba(15,23,42,0.4) 100%
+  );
+}
+
+.page-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-top: 7rem;
+  padding-bottom: var(--space-20);
+  max-width: 700px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   VERSE SECTION
+══════════════════════════════════════════════════════════ */
+.verse-section {
+  background: var(--color-dark-bg);
+  padding-block: var(--space-20);
+}
+
+.verse-card {
+  background: var(--color-dark-surface);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-xl);
+  padding: clamp(var(--space-10), 5vw, var(--space-16));
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.verse-card__heading {
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-6);
+}
+
+.verse-card__body {
+  font-size: var(--text-lg);
+  color: rgba(255,255,255,0.7);
+  line-height: 1.75;
+  margin-bottom: var(--space-8);
+}
+
+.verse-card__verse {
+  font-size: var(--text-base);
+  color: rgba(255,255,255,0.35);
+  font-style: italic;
+  line-height: 1.65;
+}
+
+/* ══════════════════════════════════════════════════════════
+   SAME TEAM CALLOUT
+══════════════════════════════════════════════════════════ */
+.same-team {
+  padding-block: var(--space-20);
+  background: var(--color-surface);
+}
+
+.same-team__box {
+  background: var(--color-foreground);
+  border-radius: var(--radius-xl);
+  padding: clamp(var(--space-10), 5vw, var(--space-16));
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.same-team__heading {
+  font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl));
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-4);
+}
+
+.same-team__body {
+  font-size: var(--text-lg);
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+  max-width: 580px;
+  margin-inline: auto;
+}
+
+.same-team__body { margin-bottom: var(--space-8); }
+
+/* ══════════════════════════════════════════════════════════
+   FOOTER VERSE
+══════════════════════════════════════════════════════════ */
+.footer__verse {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,0.2);
+  font-style: italic;
+  margin-top: var(--space-3);
+  line-height: 1.5;
+}
